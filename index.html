@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Who's DewZ — Official Site</title>
+
+  <meta
+    name="description"
+    content="Who's DewZ Official Site — Fonts, Viral Hashtags & Background Photos."
+  />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    :root {
+      --blue: #1687ff;
+      --blue2: #54b8ff;
+      --cyan: #00d9ff;
+      --white: #ffffff;
+      --glass: rgba(255, 255, 255, 0.10);
+      --glass-border: rgba(255, 255, 255, 0.22);
+      --dark: #020817;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: white;
+      background:
+        radial-gradient(circle at 15% 20%, rgba(0, 132, 255, 0.30), transparent 28%),
+        radial-gradient(circle at 85% 30%, rgba(0, 225, 255, 0.22), transparent 25%),
+        radial-gradient(circle at 50% 90%, rgba(77, 0, 255, 0.20), transparent 30%),
+        #020817;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Animated background */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: -50%;
+      z-index: -2;
+      background:
+        radial-gradient(circle, rgba(0, 162, 255, 0.14), transparent 35%),
+        radial-gradient(circle, rgba(0, 217, 255, 0.10), transparent 30%);
+      animation: backgroundMove 15s ease-in-out infinite alternate;
+    }
+
+    @keyframes backgroundMove {
+      0% {
+        transform: translate(-5%, -5%) rotate(0deg);
+      }
+      100% {
+        transform: translate(5%, 5%) rotate(8deg);
+      }
+    }
+
+    /* Floating light blobs */
+    .orb {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(55px);
+      opacity: 0.45;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .orb.one {
+      width: 180px;
+      height: 180px;
+      background: #008cff;
+      top: 12%;
+      left: -50px;
+      animation: float1 9s ease-in-out infinite;
+    }
+
+    .orb.two {
+      width: 220px;
+      height: 220px;
+      background: #00d9ff;
+      bottom: 8%;
+      right: -80px;
+      animation: float2 11s ease-in-out infinite;
+    }
+
+    @keyframes float1 {
+      50% {
+        transform: translate(80px, 100px);
+      }
+    }
+
+    @keyframes float2 {
+      50% {
+        transform: translate(-100px, -80px);
+      }
+    }
+
+    /* Navbar */
+    nav {
+      position: fixed;
+      top: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(94%, 1100px);
+      padding: 13px 18px;
+      border: 1px solid var(--glass-border);
+      border-radius: 25px;
+
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(25px) saturate(180%);
+      -webkit-backdrop-filter: blur(25px) saturate(180%);
+
+      box-shadow:
+        0 15px 45px rgba(0, 0, 0, 0.35),
+        inset 0 1px rgba(255,255,255,0.18);
+
+      z-index: 1000;
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+    }
+
+    .logo {
+      font-size: 19px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      white-space: nowrap;
+    }
+
+    .logo span {
+      color: #52b7ff;
+      text-shadow: 0 0 20px #008cff;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 8px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      padding: 9px 13px;
+      border-radius: 14px;
+      font-size: 13px;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      background: rgba(0, 145, 255, 0.25);
+      box-shadow: 0 0 25px rgba(0, 153, 255, 0.25);
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 100vh;
+      padding: 150px 20px 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-card {
+      width: min(1100px, 100%);
+      min-height: 610px;
+      border-radius: 42px;
+      border: 1px solid rgba(255,255,255,0.2);
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(255,255,255,0.14),
+          rgba(255,255,255,0.04)
+        );
+
+      backdrop-filter: blur(35px) saturate(180%);
+      -webkit-backdrop-filter: blur(35px) saturate(180%);
+
+      box-shadow:
+        0 40px 100px rgba(0,0,0,0.5),
+        inset 0 1px 1px rgba(255,255,255,0.25);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: rgba(0, 150, 255, 0.17);
+      filter: blur(60px);
+      animation: heroGlow 8s infinite alternate;
+    }
+
+    @keyframes heroGlow {
+      from {
+        transform: translate(-150px, -50px);
+      }
+      to {
+        transform: translate(150px, 50px);
+      }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      padding: 30px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 9px 18px;
+      border-radius: 100px;
+      border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(15px);
+      font-size: 12px;
+      letter-spacing: 2px;
+      margin-bottom: 25px;
+      box-shadow: 0 0 30px rgba(0,153,255,0.18);
+    }
+
+    h1 {
+      font-size: clamp(42px, 8vw, 88px);
+      line-height: 0.95;
+      letter-spacing: -4px;
+      margin-bottom: 25px;
+
+      background: linear-gradient(
+        90deg,
+        #ffffff,
+        #68c4ff,
+        #ffffff,
+        #00d9ff,
+        #ffffff
+      );
+      background-size: 300%;
+      -webkit-background-clip: text;
+      color: transparent;
+
+      animation: textFlow 6s linear infinite;
+    }
+
+    @keyframes textFlow {
+      0% { background-position: 0%; }
+      100% { background-position: 300%; }
+    }
+
+    .hero-content p {
+      color: rgba(255,255,255,0.72);
+      font-size: 17px;
+      line-height: 1.7;
+      max-width: 650px;
+      margin: auto;
+    }
+
+    .hero-buttons {
+      margin-top: 35px;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .glass-button {
+      border: 1px solid rgba(255,255,255,0.22);
+      color: white;
+      text-decoration: none;
+      padding: 14px 21px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.09);
+      backdrop-filter: blur(15px);
+      cursor: pointer;
+      transition: 0.35s;
+      font-weight: 600;
+      font-size: 14px;
+      box-shadow:
+        inset 0 1px rgba(255,255,255,0.18),
+        0 10px 30px rgba(0,0,0,0.18);
+    }
+
+    .glass-button:hover {
+      transform: translateY(-5px) scale(1.03);
+      background: rgba(0, 140, 255, 0.28);
+      border-color: rgba(80,190,255,0.7);
+      box-shadow:
+        0 0 30px rgba(0, 150, 255, 0.35),
+        inset 0 1px rgba(255,255,255,0.3);
+    }
+
+    /* Sections */
+    section {
+      width: min(1100px, 92%);
+      margin: 0 auto;
+      padding: 90px 0;
+      scroll-margin-top: 100px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title small {
+      color: #50b9ff;
+      letter-spacing: 3px;
+      font-weight: 700;
+    }
+
+    .section-title h2 {
+      margin-top: 10px;
+      font-size: clamp(32px, 6vw, 55px);
+    }
+
+    .section-title p {
+      color: rgba(255,255,255,0.6);
+      margin-top: 10px;
+    }
+
+    /* Cards */
+    .glass-panel {
+      border-radius: 35px;
+      padding: 35px;
+      background: rgba(255,255,255,0.075);
+      border: 1px solid rgba(255,255,255,0.18);
+      backdrop-filter: blur(30px) saturate(180%);
+      -webkit-backdrop-filter: blur(30px) saturate(180%);
+      box-shadow:
+        0 30px 80px rgba(0,0,0,0.35),
+        inset 0 1px rgba(255,255,255,0.18);
+    }
+
+    /* Blue scroll animation */
+    .blue-line {
+      height: 4px;
+      width: 0;
+      border-radius: 100px;
+      margin: 0 auto 30px;
+
+      background: linear-gradient(
+        90deg,
+        transparent,
+        #008cff,
+        #00d9ff,
+        #008cff,
+        transparent
+      );
+
+      box-shadow:
+        0 0 15px #008cff,
+        0 0 35px #00aaff;
+
+      transition: width 1s ease;
+    }
+
+    section.visible .blue-line {
+      width: 80%;
+    }
+
+    /* Font section */
+    .font-box {
+      text-align: center;
+    }
+
+    .font-icon {
+      font-size: 55px;
+      margin-bottom: 20px;
+      filter: drop-shadow(0 0 20px #008cff);
+    }
+
+    .font-box h3 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .font-box p {
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 25px;
+    }
+
+    .main-blue-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 15px 25px;
+      color: white;
+      text-decoration: none;
+      border-radius: 18px;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(0,130,255,0.7),
+          rgba(0,210,255,0.3)
+        );
+
+      border: 1px solid rgba(100,210,255,0.6);
+      box-shadow:
+        0 0 25px rgba(0,150,255,0.25),
+        inset 0 1px rgba(255,255,255,0.25);
+
+      transition: 0.3s;
+    }
+
+    .main-blue-button:hover {
+      transform: translateY(-4px);
+      box-shadow:
+        0 0 45px rgba(0,170,255,0.5);
+    }
+
+    /* Hashtags */
+    .hashtags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 13px;
+      margin-top: 25px;
+    }
+
+    .tag {
+      padding: 14px 18px;
+      border-radius: 18px;
+      background: rgba(0,140,255,0.12);
+      border: 1px solid rgba(50,180,255,0.3);
+      color: #a9dcff;
+      font-weight: 700;
+      transition: 0.3s;
+    }
+
+    .tag:hover {
+      transform: translateY(-5px);
+      background: rgba(0,150,255,0.28);
+      box-shadow: 0 0 25px rgba(0,150,255,0.25);
+    }
+
+    /* Photo upload */
+    .upload-area {
+      text-align: center;
+      border: 1px dashed rgba(100,200,255,0.45);
+      border-radius: 28px;
+      padding: 45px 20px;
+      background: rgba(0,120,255,0.05);
+      transition: 0.3s;
+    }
+
+    .upload-area:hover {
+      background: rgba(0,140,255,0.1);
+      border-color: rgba(100,210,255,0.8);
+    }
+
+    .plus {
+      width: 75px;
+      height: 75px;
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      font-size: 42px;
+      font-weight: 200;
+
+      background: rgba(0,140,255,0.14);
+      border: 1px solid rgba(80,190,255,0.45);
+
+      box-shadow:
+        0 0 35px rgba(0,150,255,0.2);
+    }
+
+    .upload-area h3 {
+      margin-bottom: 8px;
+    }
+
+    .upload-area p {
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 20px;
+    }
+
+    #photoInput {
+      display: none;
+    }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+      gap: 18px;
+      margin-top: 30px;
+    }
+
+    .photo-card {
+      overflow: hidden;
+      border-radius: 23px;
+      border: 1px solid rgba(255,255,255,0.16);
+      background: rgba(255,255,255,0.06);
+      box-shadow: 0 20px 45px rgba(0,0,0,0.25);
+    }
+
+    .photo-card img {
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .photo-info {
+      padding: 12px;
+    }
+
+    .download {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 10px;
+      border-radius: 13px;
+      background: rgba(0,140,255,0.18);
+      color: white;
+      text-decoration: none;
+      font-size: 13px;
+      margin-top: 8px;
+    }
+
+    .download:hover {
+      background: rgba(0,150,255,0.35);
+    }
+
+    /* WhatsApp */
+    .more-details {
+      text-align: center;
+    }
+
+    .whatsapp {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: white;
+
+      padding: 17px 28px;
+      border-radius: 22px;
+
+      background: rgba(0, 200, 100, 0.12);
+      border: 1px solid rgba(70,255,160,0.35);
+
+      box-shadow: 0 0 30px rgba(0,255,130,0.12);
+      transition: 0.3s;
+    }
+
+    .whatsapp:hover {
+      transform: translateY(-5px) scale(1.03);
+      background: rgba(0,200,100,0.22);
+      box-shadow: 0 0 45px rgba(0,255,130,0.25);
+    }
+
+    .whatsapp-icon {
+      font-size: 27px;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 40px 20px 55px;
+      color: rgba(255,255,255,0.45);
+      font-size: 13px;
+    }
+
+    footer strong {
+      color: #55bdff;
+    }
+
+    /* Reveal animations */
+    .reveal {
+      opacity: 0;
+      transform: translateY(35px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* 10 second pulse */
+    .ten-second {
+      animation: tenPulse 10s infinite;
+    }
+
+    @keyframes tenPulse {
+      0%, 85%, 100% {
+        transform: scale(1);
+        box-shadow:
+          0 40px 100px rgba(0,0,0,0.5),
+          inset 0 1px 1px rgba(255,255,255,0.25);
+      }
+
+      90% {
+        transform: scale(1.012);
+        box-shadow:
+          0 0 60px rgba(0,150,255,0.25),
+          0 40px 100px rgba(0,0,0,0.5);
+      }
+
+      95% {
+        transform: scale(1);
+      }
+    }
+
+    /* Mobile */
+    @media (max-width: 700px) {
+
+      nav {
+        top: 8px;
+        border-radius: 20px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .logo {
+        font-size: 16px;
+      }
+
+      .hero {
+        padding-top: 105px;
+        padding-bottom: 35px;
+      }
+
+      .hero-card {
+        min-height: 570px;
+        border-radius: 30px;
+      }
+
+      h1 {
+        font-size: 48px;
+        letter-spacing: -2px;
+      }
+
+      .hero-content p {
+        font-size: 15px;
+      }
+
+      section {
+        padding: 65px 0;
+        scroll-margin-top: 70px;
+      }
+
+      .glass-panel {
+        padding: 22px;
+        border-radius: 27px;
+      }
+
+      .photo-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+
+      .photo-card img {
+        height: 155px;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .glass-button {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .photo-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Floating background lights -->
+  <div class="orb one"></div>
+  <div class="orb two"></div>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-inner">
+
+      <div class="logo">
+        WHO'S <span>DEWZ</span>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="#fonts">Font</a></li>
+        <li><a href="#hashtags">Viral Hashtags</a></li>
+        <li><a href="#photos">Background Photo</a></li>
+      </ul>
+
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+  <main>
+
+    <section class="hero" id="home">
+
+      <div class="hero-card ten-second">
+
+        <div class="hero-content">
+
+          <div class="badge">
+            ✦ OFFICIAL WEBSITE ✦
+          </div>
+
+          <h1>Who's DewZ</h1>
+
+          <p>
+            Your creative space for beautiful fonts,
+            viral hashtags and stunning background photos.
+          </p>
+
+          <div class="hero-buttons">
+
+            <a class="glass-button" href="#fonts">
+              ✦ Fonts
+            </a>
+
+            <a class="glass-button" href="#hashtags">
+              # Viral Hashtags
+            </a>
+
+            <a class="glass-button" href="#photos">
+              + Background Photos
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- FONT SECTION -->
+    <section id="fonts" class="reveal">
+
+      <div class="section-title">
+        <small>01 — FONT</small>
+        <h2>Beautiful Fonts</h2>
+        <p>
+          Find the fonts you need for your creative content.
+        </p>
+      </div>
+
+      <div class="blue-line"></div>
+
+      <div class="glass-panel font-box">
+
+        <div class="font-icon">Aa</div>
+
+        <h3>Font Collection</h3>
+
+        <p>
+          Open the font collection and explore all available fonts.
+        </p>
+
+        <a
+          class="main-blue-button"
+          href="https://drive.google.com/drive/folders/1enDyQfeiAEu6l9kdFW_ZeSzSLj-jJ3Jf"
+          target="_blank"
+          rel="noopener"
+        >
+          Open Font Collection ↗
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- HASHTAGS -->
+    <section id="hashtags" class="reveal">
+
+      <div class="section-title">
+        <small>02 — VIRAL</small>
+        <h2>Viral Hashtags</h2>
+        <p>
+          Most popular tags for your content.
+        </p>
+      </div>
+
+      <div class="blue-line"></div>
+
+      <div class="glass-panel">
+
+        <div class="hashtags">
+
+          <div class="tag">#foryou</div>
+          <div class="tag">#foryoupage</div>
+          <div class="tag">#popular</div>
+          <div class="tag">#trending</div>
+          <div class="tag">#viral</div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- BACKGROUND PHOTOS -->
+    <section id="photos" class="reveal">
+
+      <div class="section-title">
+        <small>03 — BACKGROUND</small>
+        <h2>Background Photos</h2>
+        <p>
+          Add your favorite background photos and download them anytime.
+        </p>
+      </div>
+
+      <div class="blue-line"></div>
+
+      <div class="glass-panel">
+
+        <div class="upload-area">
+
+          <div class="plus">+</div>
+
+          <h3>Add Background Photo</h3>
+
+          <p>
+            Choose an image from your phone or computer.
+          </p>
+
+          <label for="photoInput" class="main-blue-button">
+            + Add Photo
+          </label>
+
+          <input
+            id="photoInput"
+            type="file"
+            accept="image/*"
+            multiple
+          />
+
+        </div>
+
+        <div id="photoGrid" class="photo-grid"></div>
+
+      </div>
+
+    </section>
+
+
+    <!-- MORE DETAILS -->
+    <section class="reveal">
+
+      <div class="glass-panel more-details">
+
+        <div class="section-title">
+          <small>MORE DETAILS</small>
+          <h2>Need More Details?</h2>
+          <p>
+            Contact us directly on WhatsApp.
+          </p>
+        </div>
+
+        <!-- 0764710434 = Sri Lanka +94 -->
+        <a
+          class="whatsapp"
+          href="https://wa.me/94764710434?text=Hi%20Who's%20DewZ%2C%20I%20need%20more%20details."
+          target="_blank"
+          rel="noopener"
+        >
+
+          <span class="whatsapp-icon">◉</span>
+
+          <span>
+            Message on WhatsApp
+          </span>
+
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    © 2026 <strong>Who's DewZ</strong>.
+    All rights reserved.
+
+  </footer>
+
+
+  <script>
+
+    /*
+      ==========================================
+      SMOOTH BLUE SCROLL ANIMATION
+      ==========================================
+    */
+
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+
+      link.addEventListener("click", function(e) {
+
+        const target = document.querySelector(this.getAttribute("href"));
+
+        if (!target) return;
+
+        e.preventDefault();
+
+        target.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+
+        // Blue flash animation
+        target.animate(
+          [
+            {
+              boxShadow: "0 0 0 rgba(0,150,255,0)"
+            },
+            {
+              boxShadow: "0 0 60px rgba(0,150,255,0.45)"
+            },
+            {
+              boxShadow: "0 0 0 rgba(0,150,255,0)"
+            }
+          ],
+          {
+            duration: 1200,
+            easing: "ease-out"
+          }
+        );
+
+      });
+
+    });
+
+
+    /*
+      ==========================================
+      SECTION REVEAL
+      ==========================================
+    */
+
+    const observer = new IntersectionObserver(
+      entries => {
+
+        entries.forEach(entry => {
+
+          if (entry.isIntersecting) {
+
+            entry.target.classList.add("show");
+            entry.target.classList.add("visible");
+
+          }
+
+        });
+
+      },
+      {
+        threshold: 0.15
+      }
+    );
+
+    document
+      .querySelectorAll(".reveal, section")
+      .forEach(el => observer.observe(el));
+
+
+    /*
+      ==========================================
+      BACKGROUND PHOTO UPLOAD
+      ==========================================
+    */
+
+    const photoInput = document.getElementById("photoInput");
+    const photoGrid = document.getElementById("photoGrid");
+
+    let photos = [];
+
+    photoInput.addEventListener("change", function(event) {
+
+      const files = Array.from(event.target.files);
+
+      files.forEach(file => {
+
+        if (!file.type.startsWith("image/")) {
+          return;
+        }
+
+        const imageURL = URL.createObjectURL(file);
+
+        photos.push({
+          name: file.name,
+          url: imageURL
+        });
+
+        createPhotoCard(file.name, imageURL);
+
+      });
+
+      photoInput.value = "";
+
+    });
+
+
+    function createPhotoCard(name, url) {
+
+      const card = document.createElement("div");
+
+      card.className = "photo-card";
+
+      card.innerHTML = `
+
+        <img
+          src="${url}"
+          alt="Background Photo"
+        />
+
+        <div class="photo-info">
+
+          <a
+            class="download"
+            href="${url}"
+            download="${name}"
+          >
+            ↓ Download
+          </a>
+
+        </div>
+
+      `;
+
+      photoGrid.prepend(card);
+
+    }
+
+
+    /*
+      ==========================================
+      10 SECOND HERO LIGHT EFFECT
+      ==========================================
+    */
+
+    const hero = document.querySelector(".hero-card");
+
+    setInterval(() => {
+
+      hero.animate(
+        [
+          {
+            boxShadow:
+              "0 40px 100px rgba(0,0,0,0.5)"
+          },
+
+          {
+            boxShadow:
+              "0 0 90px rgba(0,150,255,0.45), 0 40px 100px rgba(0,0,0,0.5)"
+          },
+
+          {
+            boxShadow:
+              "0 40px 100px rgba(0,0,0,0.5)"
+          }
+
+        ],
+        {
+          duration: 1800,
+          easing: "ease-in-out"
+        }
+      );
+
+    }, 10000);
+
+
+  </script>
+
+</body>
+</html>
